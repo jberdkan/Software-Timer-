@@ -1,0 +1,5 @@
+Just like the name states, software timers are timers that are implemented with software. In MCUs, it is extremely common to have many different hardware peripheral timers available. These are often high resolution and have many different modes and features that are used to offload work from the CPU. However, there are two downsides to hardware timers: 
+•	Since they are part of the MCU, you'll need to create an abstraction above them to prevent your code from becoming tightly coupled to the underlying MCU hardware. Different MCUs will have slightly different implementations for timers. Because of this, it is easy for code to become dependent on the underlying hardware. 
+•	They will generally take more development time to set up than using the software-based timer that has already been provided by the RTOS.
+
+Software timers alleviate this coupling by implementing multiple timer channels via software, rather than hardware. So, instead of an application being dependent on specific hardware, it can be used (without modification) on any platform the RTOS supports, which is extremely convenient.
